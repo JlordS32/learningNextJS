@@ -1,12 +1,4 @@
-async function getTickets() {
-	const response = await fetch('http://localhost:5000/tickets', {
-		next: {
-			revalidate: 0
-		}
-	});
-	return response.json();
-}
-
+import { getTickets } from '@/src/utilities/getTickets';
 const TicketList = async () => {
 	const tickets = await getTickets();
 
