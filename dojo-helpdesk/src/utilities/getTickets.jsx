@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
 export const dynamicParams = true;
 
@@ -13,16 +13,28 @@ export async function generateStaticParams() {
 }
 
 export async function getTickets() {
+	await new Promise((resolve) => {
+		return setTimeout(() => {
+			resolve();
+		}, 1000);
+	});
+
 	const url = 'http://localhost:4000/tickets';
 	const response = await fetch(url, {
 		next: {
-			revalidate: 60,
+			revalidate: 0,
 		},
 	});
 	return response.json();
 }
 
 export async function getTicket(params) {
+	await new Promise((resolve) => {
+		return setTimeout(() => {
+			resolve();
+		}, 1000);
+	});
+
 	const url = `http://localhost:4000/tickets/${params}`;
 	const response = await fetch(url, {
 		next: {

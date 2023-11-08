@@ -1,4 +1,4 @@
-import { getTicket } from '@/src/utilities/getTickets';
+import { getTicket } from '../../../src/utilities/getTickets';
 import React from 'react';
 
 const TicketDetails = async ({ params }) => {
@@ -13,9 +13,7 @@ const TicketDetails = async ({ params }) => {
 				<h3>{ticket.title}</h3>
 				<small>Created by {ticket.user_email}</small>
 				<p>{ticket.body}</p>
-				<div className={`pill ${ticket.priority}`}>
-					{ticket.priority}
-				</div>
+				<div className={`pill ${ticket.priority}`}>{ticket.priority}</div>
 			</div>
 		</main>
 	);
