@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const AuthLayout = () => {
+const AuthLayout = ({children}) => {
 	return (
 		<>
 			<nav>
@@ -11,6 +11,7 @@ const AuthLayout = () => {
 				<Link href='/signup'>Sign in</Link>
 				<Link href='/login'>Log in</Link>
 			</nav>
+         {children}
 		</>
 	);
 };
