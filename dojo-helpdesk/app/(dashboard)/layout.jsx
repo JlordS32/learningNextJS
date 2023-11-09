@@ -1,5 +1,6 @@
 import Navbar from '../../src/components/Navbar';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 
 export default async function DashboardLayout({ children }) {
@@ -7,7 +8,9 @@ export default async function DashboardLayout({ children }) {
 
 	const { data } = await supabase.auth.getSession();
 
-	console.log('data', data);
+	if (!data.session) {
+		redirect('/login');
+	}
 
 	return (
 		<>

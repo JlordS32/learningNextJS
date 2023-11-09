@@ -113,7 +113,7 @@ form button {
 
 /* pill styles */
 .pill {
-	@apply py-1 px-2    t-3
+	@apply py-1 px-2
     inline-block 
     text-xs font-semibold;
 }

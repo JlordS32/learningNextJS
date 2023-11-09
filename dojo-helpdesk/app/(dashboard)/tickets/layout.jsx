@@ -1,8 +1,11 @@
 import React from 'react';
-import Navbar from '../../../src/components/Navbar';
 
-const DashboardLayout = ({ children }) => {
-	return <>{children}</>;
+const TicketLayout = ({ children }) => {
+	return (
+		<>
+			{children}
+		</>
+	);
 };
 
-export default DashboardLayout;
+export default TicketLayout;
