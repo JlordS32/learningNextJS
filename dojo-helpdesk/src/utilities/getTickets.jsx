@@ -13,12 +13,6 @@ export async function generateStaticParams() {
 }
 
 export async function getTickets() {
-	await new Promise((resolve) => {
-		return setTimeout(() => {
-			resolve();
-		}, 1000);
-	});
-
 	const url = 'http://localhost:4000/tickets';
 	const response = await fetch(url, {
 		next: {
@@ -29,12 +23,6 @@ export async function getTickets() {
 }
 
 export async function getTicket(params) {
-	await new Promise((resolve) => {
-		return setTimeout(() => {
-			resolve();
-		}, 1000);
-	});
-
 	const url = `http://localhost:4000/tickets/${params}`;
 	const response = await fetch(url, {
 		next: {

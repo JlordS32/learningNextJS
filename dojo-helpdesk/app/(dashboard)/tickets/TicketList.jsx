@@ -1,4 +1,4 @@
-import { getTickets } from '../../src/utilities/getTickets';
+import { getTickets } from '../../../src/utilities/getTickets';
 import Link from 'next/link';
 const TicketList = async () => {
 	const tickets = await getTickets();
