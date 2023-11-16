@@ -21,10 +21,9 @@ const CreateForm = () => {
 
 		const newTicket = {
 			...ticket,
-			user_email: 'mario@netninja.dev',
 		};
 
-		const response = await fetch('http://localhost:4000/tickets', {
+		const response = await fetch('http://localhost:3000/api/tickets', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -32,7 +31,13 @@ const CreateForm = () => {
 			body: JSON.stringify(newTicket),
 		});
 
-		if (response.status === 201) {
+		const json = await response.json();
+
+		if (json.error) {
+			console.log(json.error.message);
+		}
+
+		if (json.data) {
 			router.refresh();
 			router.push('/tickets');
 		}
